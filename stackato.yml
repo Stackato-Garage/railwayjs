@@ -16,3 +16,6 @@ hooks:
 
 processes:
   web: cd blog && railway server $VCAP_APP_PORT
+
+min_version:
+  server: 1.1
