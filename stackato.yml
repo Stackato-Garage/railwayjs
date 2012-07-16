@@ -1,21 +1,14 @@
 name: railwayjs
-
 mem: 64M
-
 framework:
   type: node
-  
 hooks:
-
   post-staging:
     - npm install railway
     - railway init blog && cd blog
     - cd blog && npm install -l
     - cd blog && railway generate crud post title content
-
-
 processes:
   web: cd blog && railway server $VCAP_APP_PORT
-
 min_version:
   server: 1.1
